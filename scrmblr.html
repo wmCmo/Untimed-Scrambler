@@ -1,0 +1,88 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+        href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDQ4IDQ4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZyBjbGlwLXBhdGg9InVybCgjY2xpcDBfODY6MzE3KSI+CjxwYXRoIGQ9Ik0yOC4yMDQyIDE3LjI3NTZIMzQuMDk5MUMzNC4wMTM5IDEyLjA5MDkgMjkuNzUyNSA4LjUxMTM2IDIzLjI3NTIgOC41MTEzNkMxNi44OTc0IDguNTExMzYgMTIuMjI0MSAxMi4wMzQxIDEyLjI1MjUgMTcuMzE4MkMxMi4yMzgzIDIxLjYwOCAxNS4yNjM4IDI0LjA2NTMgMjAuMTc4NiAyNS4yNDQzTDIzLjM0NjIgMjYuMDM5OEMyNi41MTM4IDI2LjgwNjggMjguMjc1MiAyNy43MTU5IDI4LjI4OTQgMjkuNjc2MUMyOC4yNzUyIDMxLjgwNjggMjYuMjU4MiAzMy4yNTU3IDIzLjEzMzIgMzMuMjU1N0MxOS45MzcxIDMzLjI1NTcgMTcuNjM2IDMxLjc3ODQgMTcuNDM3MSAyOC44NjY1SDExLjQ4NTRDMTEuNjQxNyAzNS4xNTkxIDE2LjE0NDUgMzguNDExOSAyMy4yMDQyIDM4LjQxMTlDMzAuMzA2NSAzOC40MTE5IDM0LjQ4MjYgMzUuMDE3IDM0LjQ5NjggMjkuNjkwM0MzNC40ODI2IDI0Ljg0NjYgMzAuODMyIDIyLjI3NTYgMjUuNzc1MiAyMS4xMzkyTDIzLjE2MTYgMjAuNTE0MkMyMC42MzMyIDE5LjkzMTggMTguNTE2NyAxOC45OTQzIDE4LjU1OTMgMTYuOTA2MkMxOC41NTkzIDE1LjAzMTIgMjAuMjIxMiAxMy42NTM0IDIzLjIzMjYgMTMuNjUzNEMyNi4xNzI5IDEzLjY1MzQgMjcuOTc2OSAxNC45ODg2IDI4LjIwNDIgMTcuMjc1NloiIGZpbGw9IiM3MUIyODMiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF84NjozMTciPgo8cmVjdCB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg=="
+        type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <title>Cube Scrambler</title>
+</head>
+
+<body bgcolor="#000000">
+    <div class="container">
+        <div id="box">
+            <p id="result" style="color: whitesmoke;"></p>
+            <p id="dscrptn">Press spacebar to generate a newscramble</p>
+        </div>
+    </div>
+    <script>
+
+
+        const FACE = ['U', 'D', 'L', 'R', 'F', 'B'];
+        const SUFF = ['\'', '2', ""];
+
+
+        generate = () => {
+            let result = [];
+            let i = 1;
+            let letter = FACE[Math.floor(Math.random() * 6)];
+            let suff = SUFF[Math.floor(Math.random() * 3)];
+            result.push(letter);
+            result[0] + suff;
+
+            while (result.length != 20) {
+                let letter = FACE[Math.floor(Math.random() * 6)][0];
+                if (letter != result[i-1][0]) {
+                    result.push(letter);
+                    let suff = SUFF[Math.floor(Math.random() * 3)];
+                    result[i] = result[i] + suff
+                    i++
+                }
+            }
+            return result.join(' ');
+        }
+        result = generate();
+        document.getElementById('result').innerHTML = result;
+        document.addEventListener('keyup', event => {
+            if (event.code === 'Space') {
+                result = generate();
+                document.getElementById('result').innerHTML = result
+            }
+        })
+
+    </script>
+    <style>
+        p {
+            text-align: center;
+            font-size: xx-large;
+        }
+
+        /* #box {
+            margin: auto;
+            width: 60%;
+            padding: 10px;
+            border: 3px solid white;
+        } */
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(90deg, #C33764, #1D2671);
+        }
+
+        #dscrptn {
+            font-size: x-large;
+            color: white;
+            font-family: 'Quicksand', sans-serif;
+        }
+    </style>
+</body>
+
+</html>
