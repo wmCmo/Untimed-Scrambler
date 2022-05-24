@@ -5,47 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon"
-        href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDQ4IDQ4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZyBjbGlwLXBhdGg9InVybCgjY2xpcDBfODY6MzE3KSI+CjxwYXRoIGQ9Ik0yOC4yMDQyIDE3LjI3NTZIMzQuMDk5MUMzNC4wMTM5IDEyLjA5MDkgMjkuNzUyNSA4LjUxMTM2IDIzLjI3NTIgOC41MTEzNkMxNi44OTc0IDguNTExMzYgMTIuMjI0MSAxMi4wMzQxIDEyLjI1MjUgMTcuMzE4MkMxMi4yMzgzIDIxLjYwOCAxNS4yNjM4IDI0LjA2NTMgMjAuMTc4NiAyNS4yNDQzTDIzLjM0NjIgMjYuMDM5OEMyNi41MTM4IDI2LjgwNjggMjguMjc1MiAyNy43MTU5IDI4LjI4OTQgMjkuNjc2MUMyOC4yNzUyIDMxLjgwNjggMjYuMjU4MiAzMy4yNTU3IDIzLjEzMzIgMzMuMjU1N0MxOS45MzcxIDMzLjI1NTcgMTcuNjM2IDMxLjc3ODQgMTcuNDM3MSAyOC44NjY1SDExLjQ4NTRDMTEuNjQxNyAzNS4xNTkxIDE2LjE0NDUgMzguNDExOSAyMy4yMDQyIDM4LjQxMTlDMzAuMzA2NSAzOC40MTE5IDM0LjQ4MjYgMzUuMDE3IDM0LjQ5NjggMjkuNjkwM0MzNC40ODI2IDI0Ljg0NjYgMzAuODMyIDIyLjI3NTYgMjUuNzc1MiAyMS4xMzkyTDIzLjE2MTYgMjAuNTE0MkMyMC42MzMyIDE5LjkzMTggMTguNTE2NyAxOC45OTQzIDE4LjU1OTMgMTYuOTA2MkMxOC41NTkzIDE1LjAzMTIgMjAuMjIxMiAxMy42NTM0IDIzLjIzMjYgMTMuNjUzNEMyNi4xNzI5IDEzLjY1MzQgMjcuOTc2OSAxNC45ODg2IDI4LjIwNDIgMTcuMjc1NloiIGZpbGw9IiM3MUIyODMiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF84NjozMTciPgo8cmVjdCB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg=="
+        href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDQ4IDQ4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZyBjbGlwLXBhdGg9InVybCgjY2xpcDBfMzg6MTU1NykiPgo8cGF0aCBvcGFjaXR5PSIwLjYiIGQ9Ik0xNC40NzI1IDMxLjg1MjZDMC4wMTA4ODIxIDE2LjczNzcgMjUuNDkyMiA3LjE1ODUzIDM3LjE4NjQgOC4wNTgzNUMzOC4wNTIgOC4xMjQ5NSAzOC43NTI2IDguNzI4ODIgMzguODc3NSA5LjU3MDczQzQwLjQxNzUgMTkuOTQ2NyAzMC45MTQ3IDQ5LjAzNzYgMTQuNDcyNSAzMS44NTI2WiIgZmlsbD0iI0RGODREMSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTM2LjQ3NzkgMTIuNjk3QzM2LjQ3NzkgMTIuNjk3IDM2LjQ3NzkgMTIuNjk3IDM2LjQ3NzkgMTIuNjk3TDM2LjQzODggMTIuNzI3NEwzNi4zMjE4IDEyLjgxODZDMzYuMjE5MSAxMi44OTg5IDM2LjA2ODIgMTMuMDE3IDM1Ljg3NjYgMTMuMTY3N0MzNS40OTMzIDEzLjQ2OTIgMzQuOTQ3MyAxMy45MDA4IDM0LjI5NzkgMTQuNDIwMUMzNC4wMjA0IDE0LjY0MiAzMy43MjQyIDE0Ljg3OTggMzMuNDE0MSAxNS4xM0MzMy43MTQ0IDE1LjIxMjUgMzQuMDE4NiAxNS4zMTI3IDM0LjMyNTMgMTUuNDMyOUMzNS4yMDg1IDE1Ljc3OSAzNS42MzggMTYuNzYxMSAzNS4yODQ3IDE3LjYyNjRDMzQuOTMxNCAxOC40OTE3IDMzLjkyOTIgMTguOTEyNiAzMy4wNDYgMTguNTY2NUMzMS40NjAzIDE3Ljk0NSAzMC4wMTg1IDE4LjIxNTEgMjkuNDQxMiAxOC40MTU2QzI3LjU2MzkgMjAuMDE1MiAyNS44MzUzIDIxLjU3MjEgMjMuOTgxNiAyMy41NDQ5QzI1LjM2ODMgMjMuNjUwNyAyNi45MzU3IDI0LjAxNzMgMjguNjQ2IDI0Ljc2NDFDMjkuNTE0OCAyNS4xNDM0IDI5LjkwNTIgMjYuMTQxMSAyOS41MTggMjYuOTkyNEMyOS4xMzA5IDI3Ljg0MzYgMjguMTEyNyAyOC4yMjYxIDI3LjI0MzkgMjcuODQ2OEMyMy4zODc0IDI2LjE2MjggMjEuMTE5NyAyNy4xMjMxIDIwLjU2NjYgMjcuNDk5NEMxNy4wMjE1IDMxLjkzMzQgMTQuMDcwNSAzNi45NDI4IDEyLjk4MzMgNDIuMDkxNkMxMi43OTA2IDQzLjAwNDIgMTEuODc5MyA0My41OTA5IDEwLjk0NzkgNDMuNDAyMkMxMC4wMTY0IDQzLjIxMzMgOS40MTc1NyA0Mi4zMjA0IDkuNjEwMjggNDEuNDA3OEMxMC44MzYgMzUuNjAyOSAxNC4wODEyIDMwLjE2NDEgMTcuNzUwMiAyNS41NDk1QzE3LjkyMTMgMjQuNjI0NiAxNy44MjIyIDIyLjY0OTUgMTUuOTM1IDIxLjEwODVDMTUuMjA0MyAyMC41MTE5IDE1LjEwNTYgMTkuNDQ3OCAxNS43MTQ1IDE4LjczMThDMTYuMzIzNCAxOC4wMTU5IDE3LjQwOTQgMTcuOTE5MSAxOC4xNDAxIDE4LjUxNThDMTkuNDY3MSAxOS41OTkzIDIwLjI3MTkgMjAuODMzNiAyMC43Mjg5IDIyLjAzNzVDMjIuODY1MyAxOS42ODM2IDI0LjgwOTIgMTcuOTAwOCAyNi44ODI2IDE2LjEyMzlDMjYuOTA0NiAxNS43NTY0IDI2Ljg5NzggMTUuMzI0NSAyNi44MzIgMTQuOTE0NUMyNi43MTg0IDE0LjIwNiAyNi40OTg0IDEzLjk1NzggMjYuNDE1NSAxMy45MDM3QzI1LjYyNDIgMTMuMzg2OCAyNS40MTAzIDEyLjMzOSAyNS45Mzc5IDExLjU2MzZDMjYuNDY1NSAxMC43ODgxIDI3LjUzNDggMTAuNTc4NiAyOC4zMjYxIDExLjA5NTZDMjkuMjcyMiAxMS43MTM1IDI5Ljc2NyAxMi42NDIgMzAuMDI5MSAxMy40OTU2QzMwLjc4NjQgMTIuODc2NSAzMS41MDAyIDEyLjMwMTEgMzIuMTE5OSAxMS44MDU0QzMyLjc3NzcgMTEuMjc5NCAzMy4zMzExIDEwLjg0MiAzMy43MjA1IDEwLjUzNTdDMzMuOTE1MiAxMC4zODI2IDM0LjA2OSAxMC4yNjIyIDM0LjE3NDQgMTAuMTc5OEwzNC4yOTUyIDEwLjA4NTVMMzQuMzM3MSAxMC4wNTNDMzQuMzM3MSAxMC4wNTI5IDM0LjMzNzkgMTAuMDUyMyAzNS40MDc5IDExLjM3NDdMMzQuMzM3MSAxMC4wNTNDMzUuMDgyNSA5LjQ3Mzk5IDM2LjE2NjYgOS41OTU5OSAzNi43NTc0IDEwLjMyNjNDMzcuMzQ4NCAxMS4wNTY2IDM3LjIyMzEgMTIuMTE4IDM2LjQ3NzkgMTIuNjk3WiIgZmlsbD0iI0RGODREMSIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzM4OjE1NTciPgo8cmVjdCB3aWR0aD0iMzEiIGhlaWdodD0iMzYiIGZpbGw9IndoaXRlIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5IDgpIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg=="
         type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
-    <title>Cube Scrambler</title>
+    <title>Untimed Scrambler</title>
 </head>
 
-<body bgcolor="#000000">
-    <div class="container">
+<body>
+    <div id="container">
         <div id="box">
-            <p id="result"></p>
-            <p id="dscrptn">Spacebar for a new scramble</p>
+            <p id="result" class="text"></p>
+            <p id="description" class="text">Spacebar for a new scramble</p>
         </div>
     </div>
+    <p id="credit" class="text">Brought to You by <a href="https://exzachly.notion.site" target="_blank">Zach</a></p>
     <script>
-
-
-        const FACE = ['U', 'D', 'L', 'R', 'F', 'B'];
+        const FACE = [['U', 'D'], ['F', 'B'], ['L', 'R']];
         const SUFF = ['\'', '2', ""];
 
+        append = (letter, result) => {
+            result.push(letter);
+            let suff = SUFF[Math.floor(Math.random() * 3)];
+            result[result.length - 1] = result.at(-1)[0] + suff;
+            return result;
+        }
 
         generate = () => {
             let result = [];
-            let i = 1;
-            let letter = FACE[Math.floor(Math.random() * 6)];
-            let suff = SUFF[Math.floor(Math.random() * 3)];
-            result.push(letter);
-            result[0] + suff;
+            let letter = FACE[Math.floor(Math.random() * 3)][Math.floor(Math.random() * 2)];
+            let first = true;
+            result = append(letter, result);
 
-            while (result.length != 20) {
-                let letter = FACE[Math.floor(Math.random() * 6)][0];
-                if (letter != result[i - 1][0]) {
-                    result.push(letter);
-                    let suff = SUFF[Math.floor(Math.random() * 3)];
-                    result[i] = result[i] + suff
-                    i++
+            while (result.length < 20) {
+                letter = FACE[Math.floor(Math.random() * 3)][Math.floor(Math.random() * 2)];
+                if (!first) {
+                    let indx = repeat = 0;
+                    for (const [index, element] of FACE.entries()) {
+                        if ((element.includes(result.at(-1)[0])) && (element.includes(result.at(-1)[0]))) {
+                            repeat++
+                            indx = index
+                            break;
+                        }
+                    }
+                    if (repeat > 0) {
+                        if (!(FACE[indx].includes(letter))) {
+                            result = append(letter, result);
+                        }
+
+                    }
+                    else {
+                        if (letter != result.at(-1)[0]) {
+                            result = append(letter, result);
+                        }
+                    }
+                }
+                else {
+                    if (letter != result.at(-1)[0]) {
+                        result = append(letter, result);
+                        first = false;
+                    }
                 }
             }
-            return result.join(' ');
+            return result.join(' ')
         }
+
         result = generate();
         document.getElementById('result').innerHTML = result;
         document.addEventListener('keyup', event => {
@@ -57,26 +82,45 @@
 
     </script>
     <style>
-        p {
-            color: whitesmoke;
-            text-align: center;
-            font-size: xx-large;
-            font-family: 'Quicksand Bold', sans-serif;
-            font-size: 40px
-        }
-
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        body {
             background: linear-gradient(90deg, #C33764, #1D2671);
         }
 
-        #dscrptn {
+        #result {
+            font-weight: bold;
+            font-size: 40px;
+            margin: 20;
+        }
+
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            position: relative;
+        }
+
+        #description {
             font-size: x-large;
+            margin: 20;
+        }
+
+        p.text {
+            text-align: center;
             color: white;
-            font-family: 'Quicksand', sans-serif;
+            font-family: "Quicksand", sans-serif;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        a:hover{
+            font-weight: 600;
+        }
+        #credit {
+            position: relative;
+            margin-top: -50px;
+            
         }
     </style>
 </body>
